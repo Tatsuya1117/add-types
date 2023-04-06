@@ -1,4 +1,4 @@
-// 入力された値 lines に" | "を追加して出力する
+// 入力された値 lines に" | "を追加して出力するReactコンポーネント
 
 import React from "react";
 
