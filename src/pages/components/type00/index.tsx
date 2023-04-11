@@ -16,4 +16,3 @@ export const OutputNum: React.FC<OutputNumProps> = ({ lines }) => {
   });
   return <div>{num}</div>;
 };
-
