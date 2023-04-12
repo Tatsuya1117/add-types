@@ -1,15 +1,12 @@
 // 入力を受け取る
-const inputSt: string = "PAIZA";
+const inputSt: string = "OZAWA";
 
 // 要件に合わせて文字を置き換える
 const leetChange: { [key: string]: string } = {
-  'A': '4',
-  'E': '3',
-  'G': '6',
-  'I': '1',
   'O': '0',
-  'S': '5',
-  'Z': '2'
+  'Z': '2',
+  'A': '4',
+  'W': 'vv'
 };
 
 // 文字を入れる箱を作る
