@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { OutputNum } from "./components/type00/index";
+import MiniSlider from "./components/MiniSlider/MiniSlider";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +19,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <OutputNum lines={lines} />
+        <MiniSlider />
       </main>
     </>
   )

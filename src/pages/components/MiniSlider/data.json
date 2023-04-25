@@ -1,0 +1,52 @@
+{
+    "newShop": [
+    {
+      "shop_id": "0",
+      "name": "新店舗",
+      "tel": "未定",
+      "url": "#NewShop",
+      "address": "未定",
+      "businessHours": "09:00〜24:00",
+      "holiday": "無休",
+      "payment": "VISA/MasterCard/JCB/AmericanExpress/Diners/Discover/PayPay/楽天ペイ/auPAY/d払い/メルペイ",
+      "seats": "未定",
+      "stylist": "未定",
+      "parking": "未定",
+      "images": [
+        "../../../../public/favicon.ico",
+        "../../../../public/next.svg",
+        "../../../../public/next.svg"
+      ]
+    }
+  ],
+  "nakashima": [
+    {
+      "shop_id": "1",
+      "name": "倉敷中島店",
+      "tel": "086-454-7373",
+      "url": "#Nakashima",
+      "address": "〒710-0803 岡山県倉敷市中島795-1",
+      "businessHours": "09:00〜24:00",
+      "holiday": "無休",
+      "payment": "VISA/MasterCard/JCB/AmericanExpress/Diners/Discover/PayPay/楽天ペイ/auPAY/d払い/メルペイ",
+      "seats": "7",
+      "stylist": "12",
+      "parking": "7"
+    }
+  ],
+    "noda": [
+    {
+        "shop_id": "2",
+        "name": "岡山野田店",
+        "tel": "086-230-7177",
+        "url": "#Noda",
+        "address": "〒700-0971 岡山県岡山市北区野田5丁目7-3",
+        "businessHours": "09:00〜24:00",
+        "holiday": "無休",
+        "payment": "VISA/MasterCard/JCB/AmericanExpress/Diners/Discover/PayPay/楽天ペイ/auPAY/d払い/メルペイ",
+        "seats": "5",
+        "stylist": "1",
+        "parking": "7"
+    }
+  ]
+}
