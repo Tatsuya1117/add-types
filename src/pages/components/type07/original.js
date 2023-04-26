@@ -1,6 +1,5 @@
-// ボンバーマンの爆風を作る
-
-const [H, W] = lines[0].split(" ").map(Number);
+const input = require("fs").readFileSync("/dev/stdin", "utf8");
+const lines = input.trim().split("\n");
 
 // フィールドの状態を読み取り、爆弾の位置を記録する
 const field = [];
@@ -16,25 +15,49 @@ for (let i = 1; i <= H; i++) {
 }
 
 // 爆風が広がるマス目の数をカウントする
-let count = bombs.size;  // 「3」爆弾がある場所はすでにカウントされているため、カウント数を初期値とする
+let count = bombs.size;  // 爆弾がある場所はすでにカウントされているため、カウント数を初期値とする
 
-for (let i = 0; i < H; i++) {
-  if (field[i].indexOf("#") !== -1) {
-    count += W - 1;  // 爆弾がある場所を除いた列の数
+// 爆風が広がる範囲を二次元配列で管理する
+const fieldExplosion = Array.from({ length: H }, () => new Array(W).fill(false));
+for (const bomb of bombs) {
+  const [i, j] = bomb.split(",").map(Number);
+  for (let k = 0; k < H; k++) {
+    fieldExplosion[k][j] = true;
+  }
+  for (let k = 0; k < W; k++) {
+    fieldExplosion[i][k] = true;
   }
 }
-for (let j = 0; j < W; j++) {
-  let hasBomb = false;
-  let countInColumn = 0;
-  
-  for (let i = 0; i < H; i++) {
-    if (field[i][j] === "#") {
-      hasBomb = true;
-      countInColumn += 1;
+
+// 同じ行または列に複数の爆弾がある場合、重複する爆風が広がる範囲を除く除外の式
+for (const bomb of bombs) {
+  const [i, j] = bomb.split(",").map(Number);
+  let exclude = false;
+  for (let k = 0; k < H; k++) {
+    if (k === i) {
+      continue;
+    }
+    if (fieldExplosion[k][j]) {
+      exclude = true;
+      break;
     }
   }
-  if (hasBomb) {
-    count += countInColumn - 1;  // 爆弾がある場所を除いた行の数
+  if (exclude) {
+    count -= W - 1
+  }
+
+exclude = false;
+  for (let k = 0; k < W; k++) {
+  if (k === j) {
+  continue;
+}
+  if (fieldExplosion[i][k]) {
+    exclude = true;
+    break;
+  }
+}
+if (exclude) {
+    count -= H - 1;
   }
 }
 
